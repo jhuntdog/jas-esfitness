@@ -1,28 +1,30 @@
 {
-	"name": "twitter-bootstrap.docpad",
-	"version": "0.9.0",
-	"description": "Twitter Bootstrap skeleton for DocPad. Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions.",
-	"homepage": "https://github.com/bevry/twitter-bootstrap.docpad",
+	"name": "jas-esfitness",
+	"version": ".1.0",
+	"description": "ESFitness app modified for web.",
+	"homepage": "https://github.com/jhuntdog/jas-esfitness",
 	"keywords": [
+		"ESFitness",
+		"jhuntdog",
 		"docpad-skeleton",
 		"docpad",
 		"website",
 		"bootstrap",
 		"twitter bootstrap"
 	],
-	"author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+	"author": "Jason Huntington <me@jhuntington.com> (http://jhuntington.com)",
 	"maintainers": [
-		"Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
+		"Jason Huntington <me@jhuntington.com> (http://jhuntington.com)"
 	],
 	"contributors": [
-		"Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
+		"Erica Sweany <erica@jhuntington.com> (http://jhuntington.com)"
 	],
 	"bugs": {
-		"url": "https://github.com/docpad/twitter-bootstrap.docpad/issues"
+		"url": "https://github.com/jhuntdog/jas-esfitness/issues"
 	},
 	"repository" : {
 		"type" : "git",
-		"url" : "http://github.com/docpad/twitter-bootstrap.docpad.git"
+		"url" : "http://github.com/jhuntdog/jas-esfitness.git"
 	},
 	"engines" : {
 		"node": "0.8.x",
