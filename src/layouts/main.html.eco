@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- Our site title and description -->
+    <title><%= @getPreparedTitle() %></title>
+    <meta name="description" content="<%= @getPreparedDescription() %>" />
+    <meta name="keywords" content="<%= @getPreparedKeywords() %>" />
+    <meta name="author" content="<%= @site.author or '' %>" />
+
+    <!-- Mobile viewport optimized: h5bp.com/viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Styles -->
+
+    <%- @getBlock('styles').add(["/assets/css/twbp-styles.css","/assets/css/twbp-responsive-styles.css","/assets/css/mainstyle.css"]).toHTML() %>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+
+  </head>
+
+  <body class="home">
+    <nav id="cpr-topnavigation">
+      <div class="container">
+        <div class="navbar">
+          <div class="navbar-inner">
+
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a href="" class="brand">
+              <img class="logo" src="assets/img/logocprbutton40.png" alt="CPRKC - ">
+              <span class="navbar-site-title hidden-phone">
+                The Center for <br>
+                Pharmaceutical Research
+              </span>
+              <span class="navbar-site-title-phone visible-phone hidden-tablet hidden-desktop">
+                CPRKC
+              </span>
+            </a>
+
+            <div class="nav-collapse collapse">
+              <ul class="nav nav-pills">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="studies.html">Studies</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="directions.html">Directions</a></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <%- @content %>
+
+    <hr>
+
+    <footer class="footer pull-center">
+      <div class="container">
+        <p>
+          816.943.0770 <b>&#124;</b> &copy; The Center for Pharmaceutical Research, P.C. 2012. All Rights Reserved. <b>&#124;</b> <a href="privacy.html">Privacy Policy</a> <b>&#124;</b> <strong><span id="datejs"></span></strong>
+        </p>
+        <p>
+          <a title="Follow us on Twitter!" href="https://twitter.com/ervinmd" target="_blank"><img width="24" height="24" border="0" alt="Follow us on Twitter!" src="assets/ico/Twitter-24x24.png" />Follow us on Twitter</a> <a title="Become a fan!" href="https://www.facebook.com/thecenterforpharmaceuticalresearch" target="_blank"><img width="24" height="24" border="0" alt="Follow us on Facebook!" src="assets/ico/FaceBook-24x24.png" />Become a fan</a>
+        </p>
+      </div>
+    </footer>
+
+
+    <!-- Core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/jquery.min.js"><\/script>')</script>
+
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <%- @getBlock('scripts').add(["/assets/js/plugins.js","/assets/js/main.js"]).toHTML() %>
+
+
+  </body>
+</html>
