@@ -5,12 +5,8 @@ tags: ['calcpage']
 pageOrder: 1
 ---
 
-<!-- Dropdowns
-================================================== -->
-<section id="male-three-site">
-  <div class="page-header">
-    <h1>Male 3 Site</h1>
-  </div>
+
+
 
   <div class="calc-form">
     <form>
@@ -27,6 +23,5 @@ pageOrder: 1
     </form>
   </div>
 
-</section>
 
 

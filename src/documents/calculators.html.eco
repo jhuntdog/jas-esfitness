@@ -18,13 +18,13 @@ pageOrder: 3
 <div class="container">
   <div class="row">
 
-    <!-- Docs nav
+    <!-- Sidebar nav
     ================================================== -->
     <div class="span3 esfit-sidebar">
       <ul class="nav nav-list esfit-sidenav">
         <% for document in @getCollection('calcpages').toJSON(): %>
           <li typeof="sioc:Page" about="<%= document.url %>" class="<%= 'active'  if @document.url is document.url %>">
-            <a href="#<%= document.url %>" property="dc:title">
+            <a href="#<%= document.filename %>" property="dc:title">
               <i class="icon-chevron-right"></i><%= document.title %>
             </a>
           </li>
@@ -34,6 +34,23 @@ pageOrder: 3
 
     <div class="span9">
 
+      <% for document in @getCollection('calcpages').toJSON(): %>
+        <section typeof="sioc:Page" about="<%= document.url %>" id="<%= document.filename %>">
+
+          <div class="page-header">
+            <h1><%= document.title %></h1>
+          </div>
+
+          <div class="esfit-calccontainer">
+            <%- document.contentRendered %>
+          </div>
+
+        </section>
+      <% end %>
+
+
+      <section id="dropdowns">
+      </section>
     </div>
 
   </div>
