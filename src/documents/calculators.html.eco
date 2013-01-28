@@ -1,0 +1,40 @@
+--- yaml
+layout: 'main'
+title: 'Calculators'
+tags: ['navpage','page']
+pageOrder: 3
+---
+
+<!-- Subhead
+================================================== -->
+<header class="esfit-jumbotron subhead" id="overview">
+  <div class="container">
+    <h1><%= @getDocumentTitle() %></h1>
+    <p class="lead">Crunch those numbers!</p>
+  </div>
+</header>
+
+
+<div class="container">
+  <div class="row">
+
+    <!-- Docs nav
+    ================================================== -->
+    <div class="span3 esfit-sidebar">
+      <ul class="nav nav-list esfit-sidenav">
+        <% for document in @getCollection('calcpages').toJSON(): %>
+          <li typeof="sioc:Page" about="<%= document.url %>" class="<%= 'active'  if @document.url is document.url %>">
+            <a href="#<%= document.url %>" property="dc:title">
+              <i class="icon-chevron-right"></i><%= document.title %>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="span9">
+
+    </div>
+
+  </div>
+</div>

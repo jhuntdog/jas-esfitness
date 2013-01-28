@@ -1,0 +1,20 @@
+--- yaml
+layout: 'main'
+title: 'Home'
+tags: ['navpage','page']
+pageOrder: 1
+---
+
+<div class="esfit-jumbotron masthead">
+  <div class="container">
+    <h1>ES Fitness</h1>
+    <p class="lead">Every day is leg day!</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="marketing">
+    <h1>Introducing ES Fitness</h1>
+    <p class="marketing-byline">Erica knows that you've been eating carbs - now she can prove it.</p>
+  </div>
+</div>

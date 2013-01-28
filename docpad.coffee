@@ -66,6 +66,13 @@ docpadConfig =
       # Merge the document keywords with the site keywords
       @site.keywords.concat(@document.keywords or []).join(', ')
 
+    # Get page title
+    getDocumentTitle: ->
+      if @document.title
+        "#{@document.title}"
+      else
+        @site.title
+
 
   # Collections
   # ===========
@@ -79,6 +86,14 @@ docpadConfig =
     # This one, will fetch in all documents that will be outputted to the posts directory
     posts: (database) ->
       database.findAllLive({relativeOutDirPath:'posts'},[date:-1])
+
+    # This one, will fetch in all documents that have the tag "navpage" specified in their meta data
+    navpages: (database) ->
+      database.findAllLive({tags: $has: ['navpage']}, [pageOrder:1])
+
+    # This one, will fetch in all documents that will be outputted to the calcs directory
+    calcpages: (database) ->
+      database.findAllLive({relativeOutDirPath:'calcs'},[pageOrder:1])
 
 
   # DocPad Events

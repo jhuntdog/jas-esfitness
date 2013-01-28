@@ -25,7 +25,7 @@ Simple and flexible HTML, CSS, and Javascript for popular user interface compone
 
 ## License
 
-Unless stated otherwise, all content is licensed under the [Creative Commons Attribution License](http://creativecommons.org/licenses/by/3.0/) and code licensed under the [MIT License](http://creativecommons.org/licenses/MIT/), 2013 © [Jason Huntington](http://jhuntington.com)
+Unless stated otherwise, all content is licensed under the [Creative Commons Attribution License](http://creativecommons.org/licenses/by/3.0/) and code licensed under the [MIT License](http://creativecommons.org/licenses/MIT/), © [Jason Huntington](http://jhuntington.com) 2013
 
 ## Notes and Acknowledgements
 

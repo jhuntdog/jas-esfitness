@@ -1,0 +1,22 @@
+--- yaml
+layout: 'main'
+title: 'About'
+tags: ['navpage','page']
+pageOrder: 4
+---
+
+<!-- Subhead
+================================================== -->
+<header class="esfit-jumbotron subhead" id="overview">
+  <div class="container">
+    <h1><%= @getDocumentTitle() %></h1>
+    <p class="lead">Overview of the project, its contents, and how to get started.</p>
+  </div>
+</header>
+
+<div class="container">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo eius officia cumque ad alias consequatur incidunt magnam ea illo nihil mollitia dolorem culpa eligendi. Fuga officia at quisquam voluptatum praesentium.
+  </p>
+</div>
+
