@@ -2,7 +2,7 @@
 layout: 'main'
 title: 'About'
 tags: ['navpage','page']
-pageOrder: 4
+pageOrder: 3
 ---
 
 <!-- Subhead
