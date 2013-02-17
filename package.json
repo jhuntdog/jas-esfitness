@@ -1,6 +1,6 @@
 {
 	"name": "jas-esfitness",
-	"version": ".1.0",
+	"version": "0.1.0",
 	"description": "ESFitness app modified for web.",
 	"homepage": "https://github.com/jhuntdog/jas-esfitness",
 	"keywords": [
@@ -28,7 +28,7 @@
 	},
 	"engines" : {
 		"node": "0.8.x",
-		"npm": "1.1.x"
+		"npm": "1.2.x"
 	},
 	"dependencies": {
 		"docpad": "6.x",

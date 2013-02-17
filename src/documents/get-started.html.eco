@@ -1,5 +1,5 @@
 --- yaml
-layout: 'main'
+layout: 'default'
 title: 'Get Started'
 tags: ['navpage','page']
 pageOrder: 2
