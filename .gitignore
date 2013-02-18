@@ -1,6 +1,7 @@
 # project specific files #
 node_modules/
 out/
+components/
 src/public/assets/api/
 env.coffee
 .env
