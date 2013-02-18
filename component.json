@@ -1,0 +1,10 @@
+{
+  "name": "jas-esfitness",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "angular-complete": "~1.0.4",
+    "html5shiv": "~3.6.2pre",
+    "respond": "~1.2.0"
+  }
+}
