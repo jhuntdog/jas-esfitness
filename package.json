@@ -1,51 +1,52 @@
 {
-	"name": "jas-esfitness",
-	"version": "0.1.0",
-	"description": "ESFitness app modified for web.",
-	"homepage": "https://github.com/jhuntdog/jas-esfitness",
-	"keywords": [
-		"ESFitness",
-		"jhuntdog",
-		"docpad-skeleton",
-		"docpad",
-		"website",
-		"bootstrap",
-		"twitter bootstrap"
-	],
-	"author": "Jason Huntington <me@jhuntington.com> (http://jhuntington.com)",
-	"maintainers": [
-		"Jason Huntington <me@jhuntington.com> (http://jhuntington.com)"
-	],
-	"contributors": [
-		"Erica Sweany <erica@jhuntington.com> (http://jhuntington.com)"
-	],
-	"bugs": {
-		"url": "https://github.com/jhuntdog/jas-esfitness/issues"
-	},
-	"repository" : {
-		"type" : "git",
-		"url" : "http://github.com/jhuntdog/jas-esfitness.git"
-	},
-	"engines" : {
-		"node": "0.8.x",
-		"npm": "1.2.x"
-	},
-	"dependencies": {
-		"docpad": "6.x",
-		"docpad-plugin-cleanurls": "2.x",
-		"docpad-plugin-coffeescript": "2.x",
-		"docpad-plugin-eco": "2.x",
-		"docpad-plugin-less": "2.x",
-		"docpad-plugin-marked": "2.x",
-		"docpad-plugin-partials": "2.x",
-		"docpad-plugin-stylus": "2.x",
-		"docpad-plugin-text": "2.x",
-		"docpad-plugin-jade": "2.x",
-		"docpad-plugin-related": "2.x",
-    "marked": "*"
-	},
-	"devDependencies": {
-		"docpad-plugin-livereload": "2.x"
-	},
-	"main": "node_modules/docpad/bin/docpad-server"
+  "name": "jas-esfitness",
+  "version": "0.1.0",
+  "description": "ESFitness app modified for web.",
+  "homepage": "https://github.com/jhuntdog/jas-esfitness",
+  "keywords": [
+    "ESFitness",
+    "jhuntdog",
+    "docpad-skeleton",
+    "docpad",
+    "website",
+    "bootstrap",
+    "twitter bootstrap"
+  ],
+  "author": "Jason Huntington <me@jhuntington.com> (http://jhuntington.com)",
+  "maintainers": [
+    "Jason Huntington <me@jhuntington.com> (http://jhuntington.com)"
+  ],
+  "contributors": [
+    "Erica Sweany <erica@jhuntington.com> (http://jhuntington.com)"
+  ],
+  "bugs": {
+    "url": "https://github.com/jhuntdog/jas-esfitness/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jhuntdog/jas-esfitness.git"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.2.x"
+  },
+  "dependencies": {
+    "docpad": "6.x",
+    "docpad-plugin-cleanurls": "2.x",
+    "docpad-plugin-coffeescript": "2.x",
+    "docpad-plugin-eco": "2.x",
+    "docpad-plugin-less": "2.x",
+    "docpad-plugin-marked": "2.x",
+    "docpad-plugin-partials": "2.x",
+    "docpad-plugin-stylus": "2.x",
+    "docpad-plugin-text": "2.x",
+    "docpad-plugin-jade": "2.x",
+    "docpad-plugin-related": "2.x",
+    "marked": "*",
+    "bal-util": "~1.16.8"
+  },
+  "devDependencies": {
+    "docpad-plugin-livereload": "2.x"
+  },
+  "main": "node_modules/docpad/bin/docpad-server"
 }

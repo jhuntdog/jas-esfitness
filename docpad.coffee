@@ -73,6 +73,8 @@ docpadConfig =
       else
         @site.title
 
+    getDocumentSubtitle: ->
+      "#{@document.subtitle}"
 
   # Collections
   # ===========

@@ -1,0 +1,128 @@
+---
+title: 'BodyCalc'
+layout: 'angularlayout'
+subtitle: 'Crunch those numbers!'
+tags: ['navpage','page']
+pageOrder: 3
+---
+
+<div class="container" ng-controller="BodyCalcCtrl">
+  <div class="row">
+    <form name="bodyCalcForm" action="">
+
+      <div class="span4 well">
+        <fieldset>
+          <legend>Main</legend>
+
+          <div class="btn-group" ng-model="radioValue" bs-buttons-radio>
+            <button type="button" class="btn" value="tressite">3 Site</button>
+            <button type="button" class="btn" value="sietesite">7 Site</button>
+          </div>
+
+          <div class="btn-group btn-group-justified">
+            <input type="radio" ng-model="client.sitenumber" value="threesite" name="clientSiteNumber" id="clientSiteThree"/>
+            <label class="btn btn-large btn-site-active" for="clientSiteThree">3 Site</label>
+
+            <input type="radio" ng-model="client.sitenumber" value="sevensite" name="clientSiteNumber" id="clientSiteSeven" />
+            <label class="btn btn-large btn-site-active" for="clientSiteSeven">7 Site</label>
+          </div>
+
+          <div><br></div>
+
+          <div class="btn-group btn-group-justified">
+            <input type="radio" ng-model="client.gender" value="male" name="clientGender" id="clientGenderMale" checked/>
+            <label class="btn btn-large btn-male" for="clientGenderMale">Male</label>
+            <input type="radio" ng-model="client.gender" value="female" name="clientGender" id="clientGenderFemale" />
+            <label class="btn btn-large btn-female" for="clientGenderFemale">Female</label>
+          </div>
+
+          <div><br></div>
+
+
+
+
+
+
+          <label for="">Age</label>
+          <input type="text" ng-model="client.age" name="clientAge">
+
+          <label for="">Weight</label>
+          <input type="text" ng-model="client.weight" name="clientWeight">
+
+
+        </fieldset>
+      </div>
+
+      <div class="span4">
+        <fieldset name="measurements">
+          <legend>Measurements</legend>
+
+          <label for"">Triceps</label>
+          <input name="triceps" type="text" ng-model="client.triceps">
+
+          <label for"">Pectoral</label>
+          <input name="pectoral" type="text" ng-model="client.pectoral">
+
+          <label for"">Midaxilla</label>
+          <input name="midaxilla" type="text" ng-model="client.midaxilla">
+
+          <label for"">Subscapula</label>
+          <input name="subscapula" type="text" ng-model="client.subscapula">
+
+          <label for"">Abdomen</label>
+          <input name="abdomen" type="text" ng-model="client.abdomen">
+
+          <label for"">Suprailiac</label>
+          <input name="suprailiac" type="text" ng-model="client.suprailiac">
+
+          <label for"">Quadriceps</label>
+          <input name="quadriceps" type="text" ng-model="client.quadriceps">
+
+        </fieldset>
+      </div>
+
+      <div class="sapn4">
+        <fieldset name="results">
+          <legend>Results</legend>
+
+          <label for"">Density</label>
+          <input name="Density" type="text">
+          <label for"">Lean Weight</label>
+          <input name="LeanWeight" type="text">
+          <label for"">Fat Weight</label>
+          <input name="FatWeight" type="text">
+          <label for"">% Fat</label>
+          <input name="PercentFat" type="text">
+          <label for"">Population Average</label>
+          <input name="PopulationAverage" type="text">
+          <label for"">Score</label>
+          <input name="Score" type="text">
+          <label for"">Rating</label>
+          <input name="Rating" type="text">
+
+        </fieldset>
+      </div>
+
+      <div class="form-actions">
+        <button ng-click="calculate(client)" type="submit" class="btn btn-primary">Calc</button>
+        <button ng-click="reset()" type="button" class="btn">Reset</button>
+      </div>
+
+      <div class="demo">
+        <p class="lead">Debug Stuff</p>
+
+        <pre>client = {{client | json}}</pre>
+        <pre>master = {{master | json}}</pre>
+        <pre>form = {{bodyCalcForm | json}}</pre>
+
+        <h2>Experiment</h2>
+        <p>1 + 2 = {{ 1 + 2 }}</p>
+      </div>
+
+    </form>
+  </div>
+  <div class="row">
+
+  </div>
+</div> <!-- end BodyCalcCtrl and container -->
+

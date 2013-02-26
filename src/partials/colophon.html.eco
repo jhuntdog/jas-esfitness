@@ -1,0 +1,17 @@
+
+<!-- Footer
+================================================== -->
+<footer class="footer">
+  <div class="container">
+    <p>
+      Designed and built with all the love in the world by <a href="http://twitter.com/jasonhuntington" target="_blank">@jasonhuntington</a>.
+    </p>
+    <p>
+      Content inspired by Erica Sweany.
+    </p>
+    <p>
+      Code licensed under <a href="http://creativecommons.org/licenses/MIT/" target="_blank">MIT License</a>, content under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+    </p>
+  </div>
+</footer>
+

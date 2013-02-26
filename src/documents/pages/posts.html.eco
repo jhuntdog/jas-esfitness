@@ -1,0 +1,26 @@
+---
+title: 'Blog'
+layout: 'default'
+subtitle: 'ES Fitness Blog'
+tags: ['navpage','page']
+pageOrder: 5
+---
+
+<!-- Subhead
+================================================== -->
+<header class="es-fit-jumbotron subhead" id="overview">
+  <div class="container">
+    <h1><%= @getDocumentTitle() %></h1>
+    <p class="lead"><%= @getDocumentSubtitle() %></p>
+  </div>
+</header>
+
+<div class="container">
+  <nav class="linklist">
+    <% for document in @getCollection('posts').toJSON(): %>
+      <li><span><%= document.date.toShortDateString() %></span>
+      &raquo;
+      <a href="<%= document.url %>"><%= document.title %></a></li>
+    <% end %>
+  </nav>
+</div>

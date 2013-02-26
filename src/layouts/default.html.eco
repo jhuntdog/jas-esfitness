@@ -42,15 +42,15 @@
 
     <!-- Navbar
     ================================================== -->
-    <header class="header">
+    <nav class="mainnav">
       <div class="navbar navbar-fixed-top">
         <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="/">ES Fitness</a>
+          <a class="navbar-brand" href="/">ES Fitness</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <% for document in @getCollection('navpages').toJSON(): %>
@@ -62,7 +62,7 @@
           </div>
         </div>
       </div>
-    </header>
+    </nav>
 
 
 
@@ -95,7 +95,7 @@
 
     <script src="assets/scripts/vendor/bootstrap.min.js"></script>
 
-    <%- @getBlock('scripts').add(["/assets/scripts/plugins.js","/assets/scripts/main.js","/assets/scripts/application.js"]).toHTML() %>
+    <%- @getBlock('scripts').add(["/assets/scripts/plugins.js","/assets/scripts/main.js"]).toHTML() %>
 
 
   </body>

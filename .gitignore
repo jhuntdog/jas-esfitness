@@ -34,3 +34,6 @@ Thumbs.db
 nbproject
 *.sublime-project
 *.sublime-workspace
+nbproject
+manifest.mf
+build.xml

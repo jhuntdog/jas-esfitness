@@ -1,14 +1,15 @@
---- yaml
-layout: 'default'
+---
 title: 'Home'
+layout: 'default'
+subtitle: 'Every day is leg day!'
 tags: ['navpage','page']
 pageOrder: 1
 ---
 
-<div class="esfit-jumbotron masthead">
+<div class="es-fit-jumbotron masthead">
   <div class="container">
     <h1>ES Fitness</h1>
-    <p class="lead">Every day is leg day!</p>
+    <p class="lead"><%= @getDocumentSubtitle() %></p>
   </div>
 </div>
 

@@ -1,18 +1,10 @@
---- yaml
-layout: 'default'
+---
 title: 'Calculators'
+layout: 'angularlayout'
 tags: ['navpage','page']
-pageOrder: 3
+pageOrder: 4
 ---
 
-<!-- Subhead
-================================================== -->
-<header class="esfit-jumbotron subhead" id="overview">
-  <div class="container">
-    <h1><%= @getDocumentTitle() %></h1>
-    <p class="lead">Crunch those numbers!</p>
-  </div>
-</header>
 
 
 <div class="container">

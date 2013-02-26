@@ -1,0 +1,120 @@
+---
+title: 'BodyCalc'
+layout: 'angularlayout'
+subtitle: 'Crunch those numbers!'
+tags: ['navpage','page']
+pageOrder: 3
+---
+
+<!-- Subhead
+================================================== -->
+<header class="es-fit-jumbotron subhead" id="overview">
+  <div class="container">
+    <h1><%= @getDocumentTitle() %></h1>
+    <p class="lead"><%= @getDocumentSubtitle() %></p>
+  </div>
+</header>
+
+<div class="container" ng-controller="BodyCalcCtrl">
+  <div class="row">
+    <form name="bodyCalcForm" action="">
+
+      <div class="span4 well">
+        <fieldset>
+          <legend>Main</legend>
+
+          <label class="radio">
+            <input type="radio" ng-model="client.sex" checked>
+            Male
+          </label>
+          <label class="radio">
+            <input type="radio" ng-model="client.sex">
+            Female
+          </label>
+
+
+          <label for="">Age</label>
+          <input type="text" ng-model="client.age">
+
+          <label for="">Weight</label>
+          <input type="text" ng-model="client.weight">
+
+          <span class="help-block">Example block-level help text here.</span>
+          <label class="checkbox">
+            <input type="checkbox"> Check me out
+          </label>
+
+        </fieldset>
+      </div>
+
+      <div class="span4">
+        <fieldset name="measurements">
+          <legend>Measurements</legend>
+
+          <label for"">Triceps</label>
+          <input name="Triceps" type="text">
+
+          <label for"">Pectoral</label>
+          <input name="Pectoral" type="text">
+
+          <label for"">Midaxilla</label>
+          <input name="Midaxilla" type="text">
+
+          <label for"">Subscapula</label>
+          <input name="Subscapula" type="text">
+
+          <label for"">Abdomen</label>
+          <input name="Abdomen" type="text">
+
+          <label for"">Suprailiac</label>
+          <input name="Suprailiac" type="text">
+
+          <label for"">Quadriceps</label>
+          <input name="Quadriceps" type="text">
+
+        </fieldset>
+      </div>
+
+      <div class="sapn4">
+        <fieldset name="results">
+          <legend>Results</legend>
+
+          <label for"">Density</label>
+          <input name="Density" type="text">
+          <label for"">Lean Weight</label>
+          <input name="LeanWeight" type="text">
+          <label for"">Fat Weight</label>
+          <input name="FatWeight" type="text">
+          <label for"">% Fat</label>
+          <input name="PercentFat" type="text">
+          <label for"">Population Average</label>
+          <input name="PopulationAverage" type="text">
+          <label for"">Score</label>
+          <input name="Score" type="text">
+          <label for"">Rating</label>
+          <input name="Rating" type="text">
+
+        </fieldset>
+      </div>
+
+      <div class="form-actions">
+        <button ng-click="calculate(client)" type="submit" class="btn btn-primary">Calc</button>
+        <button ng-click="reset()" type="button" class="btn">Reset</button>
+      </div>
+
+      <div class="demo">
+        <p class="lead">Debug Stuff</p>
+        <pre>form = {{client | json}}</pre>
+        <pre>master = {{master | json}}</pre>
+
+        <h2>Experiment</h2>
+        <p>1 + 2 = {{ 1 + 2 }}</p>
+      </div>
+
+    </form>
+  </div>
+  <div class="row">
+
+  </div>
+</div> <!-- end BodyCalcCtrl and container -->
+

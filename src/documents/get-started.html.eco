@@ -1,16 +1,17 @@
 --- yaml
-layout: 'default'
 title: 'Get Started'
+layout: 'default'
+subtitle: 'Overview of the project, its contents, and how to get started.'
 tags: ['navpage','page']
 pageOrder: 2
 ---
 
 <!-- Subhead
 ================================================== -->
-<header class="esfit-jumbotron subhead" id="overview">
+<header class="es-fit-jumbotron subhead" id="overview">
   <div class="container">
     <h1><%= @getDocumentTitle() %></h1>
-    <p class="lead">Overview of the project, its contents, and how to get started.</p>
+    <p class="lead"><%= @getDocumentSubtitle() %></p>
   </div>
 </header>
 

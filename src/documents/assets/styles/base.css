@@ -78,6 +78,10 @@ textarea {
     resize: vertical;
 }
 
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  margin-bottom: 8px;
+}
+
 /* ==========================================================================
    Chrome Frame prompt
    ========================================================================== */
@@ -305,6 +309,58 @@ section > ul li {
 
 
 
+/*Custom Utilities*/
+.btn-group > input {
+    display: none;
+}
+
+.btn-group input:first-child + .btn {
+     /* This is an actual copy/paste of the .btn-group .btn:first-child style */
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    margin-left: 0;
+}
+
+input:checked + label.btn-male {
+  background-color: #428bca;
+  font-weight: bold;
+}
+
+input:checked + label.btn-female {
+  background-color: #E873B3;
+  font-weight: bold;
+}
+
+input:checked + label.btn-site-active {
+  background-color: #4cae4c;
+  font-weight: bold;
+}
+
+/*.btn-male {
+  background-color: #428bca;
+}
+
+.btn-female {
+  background-color: #E873B3;
+}*/
+
+input:checked + label.btn {
+    /* This is an actual copy/paste of the .btn:active style */
+    /*background-color: #E6E6E6;*/
+    background-image: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.8);
+    outline: 0 none;
+}
+
+input[disabled] + label.btn {
+    /* This is an actual copy/paste of the .btn:disabled style */
+    background-color: #E6E6E6;
+    background-image: none;
+    box-shadow: none;
+    cursor: default;
+    opacity: 0.65;
+}
 
 
 
@@ -435,8 +491,8 @@ section > ul li {
     margin-right: 10%;
   }
   .subhead {
-    padding-top:    60px;
-    padding-bottom: 60px;
+    padding-top:    30px;
+    padding-bottom: 30px;
     text-align: left;
   }
 
