@@ -362,7 +362,25 @@ input[disabled] + label.btn {
     opacity: 0.65;
 }
 
+.sitenumber-buttons .btn.active {
+  background-color: #46b8da;
+  border-color: #31b0d5;
+}
 
+.btn.btn-male.active {
+  background-color: #357ebd;
+  border-color: #3071a9;
+}
+
+.btn.btn-female.active {
+  background-color: #E873B3;
+  border-color: #bd195b;
+}
+
+/*.btn.active {
+  background-color: #357ebd;
+  border-color: #3071a9;
+}*/
 
 
 /* ==========================================================================

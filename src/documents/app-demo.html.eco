@@ -6,39 +6,81 @@ tags: ['navpage','page']
 pageOrder: 9
 ---
 
-<div class="container" ng-controller="StrapCtrl">
+<div class="container" ng-controller="BodyCalcCtrl">
   <div class="row">
 
-    <div class="span12">
-      <ul class="nav">
-        <li><a href="#/view1">View1</a></li>
-        <li><a href="#/view2">View2</a></li>
-      </ul>
-    </div>
+    <div class="span4">
 
-
-
-    <div ng-view></div>
-
-    <div>Angular seed app: v<span app-version></span></div>
-
-    <hr>
-
-    <div class="btn-toolbar well">
-    <div class="btn-group" ng-model="radioValue" bs-buttons-radio>
-            <button type="button" class="btn" value="tressite">3 Site</button>
-            <button type="button" class="btn" value="sietesite">7 Site</button>
-          </div>
+      <div class="row sitenumber-buttons" ng-model="sitenumber" bs-buttons-radio>
+        <div class="span6" >
+          <button type="button" class="btn btn-large btn-block" value="threesite">3 Site</button>
         </div>
-
-    <hr>
-    <div>
-      <div class="btn-group" data-toggle="buttons-radio">
-        <button type="button" class="btn btn-primary">Left</button>
-        <button type="button" class="btn btn-primary">Middle</button>
-        <button type="button" class="btn btn-primary">Right</button>
+        <div class="span6">
+          <button type="button" class="btn btn-large btn-block" value="sevensite">7 Site</button>
+        </div>
       </div>
+
+      <br>
+
+      <div class="row" ng-model="clientgender" bs-buttons-radio>
+        <div class="span6" >
+          <button type="button" class="btn btn-large btn-block btn-male" value="male">Male</button>
+        </div>
+        <div class="span6">
+          <button type="button" class="btn btn-large btn-block btn-female" value="female">Female</button>
+        </div>
+      </div>
+
     </div>
+
+    <div class="span4">
+
+    </div>
+
+    <div class="span4">
+      <hr>
+
+      <div>
+
+
+
+
+
+        <form name="bodyCalcForm" novalidate class="simple-form">
+          <fieldset>
+
+            <label for="">Age</label>
+            <input type="text" ng-model="client.age" name="clientAge">
+
+            <label for="">Weight</label>
+            <input type="text" ng-model="client.weight" name="clientWeight">
+
+          </fieldset>
+
+
+          <div class="form-actions">
+            <button ng-click="calculate(client)" class="btn btn-primary">Calc</button>
+            <button ng-click="reset()" class="btn">Reset</button>
+          </div>
+
+        </form>
+      </div>
+
+      <div class="well">
+        <pre>sitenumber: {{sitenumber | json}}</pre>
+        <pre>clientgender: {{clientgender | json}}</pre>
+        <pre>client = {{client | json}}</pre>
+        <pre>master = {{master | json}}</pre>
+        <pre>clientstats = {{clientstats | json}}</pre>
+        <pre>form = {{bodyCalcForm | json}}</pre>
+      </div>
+
+
+
+      <hr>
+    </div>
+
+
 
   </div>
 </div>
