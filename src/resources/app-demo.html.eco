@@ -118,7 +118,26 @@ pageOrder: 9
           <p>Score: {{ client_Score }}</p>
           <p>Rating: {{ client_Rating }}</p>
 
+          <label for"clientDensity">Density</label>
+          <input name="clientDensity" id="clientDensity" type="text">
 
+          <label for"clientLeanWeight">Lean Weight</label>
+          <input name="clientLeanWeight" id="clientLeanWeight" type="text">
+
+          <label for"clientFatWeight">Fat Weight</label>
+          <input name="clientFatWeight" id="clientFatWeight" type="text">
+
+          <label for"clientPercentFat">% Fat</label>
+          <input name="clientPercentFat" id="clientPercentFat" type="text">
+
+          <label for"clientPopulationAverage">Population Average</label>
+          <input name="clientPopulationAverage" id="clientPopulationAverage" type="text">
+
+          <label for"clientScore">Score</label>
+          <input name="clientScore" id="clientScore" type="text">
+
+          <label for"clientRating">Rating</label>
+          <input name="clientRating" id="clientRating" type="text">
 
         </fieldset>
       </div>

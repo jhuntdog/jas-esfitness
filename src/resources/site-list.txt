@@ -1,0 +1,55 @@
+Triceps
+Pectoral
+Midaxilla
+Subscapula
+Abdomen
+Suprailiac
+Quadriceps
+
+SumSeven=form.Triceps.value*1+form.Pectoral.value*1+form.Midaxilla.value*1+form.Subscapula.value*1+form.Abdomen.value*1+form.Suprailiac.value*1+form.Quadriceps.value*1
+
+SumThreeMale=form.Pectoral.value*1+form.Abdomen.value*1+form.Quadriceps.value*1
+
+SumThreeFemale=form.Triceps.value*1+form.Suprailiac.value*1+form.Quadriceps.value*1
+
+
+    hidePectoral: sitenumber.threesite && clientgender.female,
+    hideMidaxilla: sitenumber.threesite,
+    hideSubscapula: sitenumber.threesite,
+    hideAbdomen: sitenumber.threesite && clientgender.female,
+    hideSuprailiac: sitenumber.threesite && clientgender.male
+
+
+<fieldset name="results">
+          <legend>Results</legend>
+
+          <p>Density: {{ client_Density }}</p>
+          <p>Lean Weight: {{client_LeanWeight}}</p>
+          <p>Fat Weight: {{ client_FatWeight }}</p>
+          <p>% Fat: {{ client_PercentFat }}</p>
+          <p>Population Average: {{ client_PopulationAverage }}</p>
+          <p>Score: {{ client_Score }}</p>
+          <p>Rating: {{ client_Rating }}</p>
+
+          <label for"clientDensity">Density</label>
+          <input name="clientDensity" id="clientDensity" type="text">
+
+          <label for"clientLeanWeight">Lean Weight</label>
+          <input name="clientLeanWeight" id="clientLeanWeight" type="text">
+
+          <label for"clientFatWeight">Fat Weight</label>
+          <input name="clientFatWeight" id="clientFatWeight" type="text">
+
+          <label for"clientPercentFat">% Fat</label>
+          <input name="clientPercentFat" id="clientPercentFat" type="text">
+
+          <label for"clientPopulationAverage">Population Average</label>
+          <input name="clientPopulationAverage" id="clientPopulationAverage" type="text">
+
+          <label for"clientScore">Score</label>
+          <input name="clientScore" id="clientScore" type="text">
+
+          <label for"clientRating">Rating</label>
+          <input name="clientRating" id="clientRating" type="text">
+
+        </fieldset>
