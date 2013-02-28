@@ -6,7 +6,7 @@ tags: ['navpage','page']
 pageOrder: 9
 ---
 
-<div class="container" ng-controller="BodyCalcCtrl">
+<div class="container" ng-controller="BodyCalcFormController">
   <div class="row">
 
     <div class="span4 well">
@@ -40,16 +40,16 @@ pageOrder: 9
 
     <div class="span4">
 
-      <form name="bodyCalcForm" novalidate class="form-horizontal">
+      <form name="bodyCalcForm" id="bodyCalcForm" novalidate class="form-horizontal">
         <fieldset name="formmain">
           <legend>Main</legend>
 
 
           <label for="clientAge">Age</label>
-          <input type="text" ng-model="client.age" name="clientAge" id="clientAge">
+          <input type="text" ng-model="client.age" ng-placeholder="Age"name="clientAge" id="clientAge">
 
           <label for="clientWeight">Weight</label>
-          <input type="text" ng-model="client.weight" name="clientWeight" id="clientWeight">
+          <input type="text" ng-model="client.weight" ng-placeholder="Weight"name="clientWeight" id="clientWeight">
 
         </fieldset>
 
@@ -110,6 +110,29 @@ pageOrder: 9
         <fieldset name="results">
           <legend>Results</legend>
 
+          <p>Age: {{client.age}}</p>
+          <p>Weight: {{client.weight}}</p>
+
+          <p>Triceps: {{client.triceps*1}}</p>
+          <p>Pectoral: {{client.pectoral*1}}</p>
+          <p>Midaxilla: {{client.midaxilla*1}}</p>
+          <p>Subscapula: {{client.subscapula*1}}</p>
+          <p>Abdomen: {{client.abdomen*1}}</p>
+          <p>Suprailiac: {{client.suprailiac*1}}</p>
+          <p>Quadriceps: {{client.quadriceps*1}}</p>
+
+          <hr>
+          <p>SumThreeMale: {{ client.pectoral*1 + client.abdomen*1 + client.quadriceps*1 }}</p>
+          <p>SumThreeFemale: {{ client.triceps*1 + client.suprailiac*1 + client.quadriceps*1 }}</p>
+          <p>SumSeven: {{ client.triceps*1 + client.pectoral*1 + client.midaxilla*1 + client.subscapula*1 + client.abdomen*1 + client.suprailiac*1 + client.quadriceps*1}}</p>
+          <hr>
+
+          <p>SumThreeMaleVar: {{ sumThreeMale }}</p>
+          <p>SumThreeFemaleVar: {{ sumThreeFemale }}</p>
+          <p>SumSevenVar: {{ sumSeven }}</p>
+          <hr>
+
+
           <p>Density: {{ client_Density }}</p>
           <p>Lean Weight: {{client_LeanWeight}}</p>
           <p>Fat Weight: {{ client_FatWeight }}</p>
@@ -117,7 +140,6 @@ pageOrder: 9
           <p>Population Average: {{ client_PopulationAverage }}</p>
           <p>Score: {{ client_Score }}</p>
           <p>Rating: {{ client_Rating }}</p>
-
 
 
         </fieldset>
@@ -138,14 +160,17 @@ pageOrder: 9
 
   <div class="row">
     <div class="">
-        <pre>sitenumber: {{sitenumber | json}}</pre>
-        <pre>clientgender: {{clientgender | json}}</pre>
-        <pre>client = {{client | json}}</pre>
-        <pre>master = {{master | json}}</pre>
-        <pre>clientstats = {{clientstats | json}}</pre>
-        <pre>clientresults = {{clientresults | json}}</pre>
-        <pre>form = {{bodyCalcForm | json}}</pre>
-      </div>
+
+
+
+      <pre>sitenumber: {{sitenumber | json}}</pre>
+      <pre>clientgender: {{clientgender | json}}</pre>
+      <pre>client = {{client | json}}</pre>
+      <pre>master = {{master | json}}</pre>
+      <pre>clientstats = {{clientstats | json}}</pre>
+      <pre>clientresults = {{clientresults | json}}</pre>
+      <pre>form = {{bodyCalcForm | json}}</pre>
+    </div>
   </div>
 
 </div>
