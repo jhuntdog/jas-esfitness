@@ -148,12 +148,10 @@ app.controller('BodyCalcFormController', function($scope, $window) {
       ratingValue = "Poor";
     }
 
-
-
-    $scope.client_Density = densityValue;
-    $scope.client_LeanWeight = leanWeightValue;
-    $scope.client_FatWeight = fatWeightValue;
-    $scope.client_PercentFat = percentFatValue;
+    $scope.client_Density = Math.round( densityValue * 1000) / 1000;
+    $scope.client_LeanWeight = Math.round( leanWeightValue * 1000) / 1000;
+    $scope.client_FatWeight = Math.round( fatWeightValue * 1000) / 1000;
+    $scope.client_PercentFat = Math.round( percentFatValue * 1000) / 1000;
     $scope.client_PopulationAverage = populationAverageValue;
     $scope.client_Score = scoreValue;
     $scope.client_Rating = ratingValue;
@@ -176,82 +174,6 @@ app.controller('BodyCalcFormController', function($scope, $window) {
 
 
 
-function calculations () {
-
-  // define variables
-  var NS, S, SumSeven, SumThreeMale, SumThreeFemale, StandDev, PercRegress, Zscore, PE;
-  NS=sitenumber.value;
-  S=clientgender.value;
-  SumSeven=bodyCalcForm.Triceps.value*1+bodyCalcForm.Pectoral.value*1+bodyCalcForm.Midaxilla.value*1+bodyCalcForm.Subscapula.value*1+bodyCalcForm.Abdomen.value*1+bodyCalcForm.Suprailiac.value*1+bodyCalcForm.Quadriceps.value*1;
-  SumThreeMale=bodyCalcForm.Pectoral.value*1+bodyCalcForm.Abdomen.value*1+bodyCalcForm.Quadriceps.value*1;
-  SumThreeFemale=bodyCalcForm.Triceps.value*1+bodyCalcForm.Suprailiac.value*1+bodyCalcForm.Quadriceps.value*1;
-
-  if (S == "male" && NS=="sevensite") {
-    bodyCalcForm.Density.value =
-    1.112-0.00043499*SumSeven+0.00000055 *Math.pow(SumSeven,2)-0.00028826*bodyCalcForm.Age.value;
-  }
-
-  if (S == "female" && NS=="sevensite") {
-    bodyCalcForm.Density.value =
-    1.097-0.00046971*SumSeven+0.00000056 *Math.pow(SumSeven,2)-0.00012828*bodyCalcForm.Age.value
-  }
-
-  if (S == "male" && NS=="threesite") {
-    bodyCalcForm.Density.value =
-    1.10938-0.0008267*SumThreeMale+0.0000016 *Math.pow(SumThreeMale,2)-0.0002574*bodyCalcForm.Age.value
-  }
-  if (S == "female" && NS=="threesite") {
-    bodyCalcForm.Density.value =
-    1.0994921-0.0009929*SumThreeFemale+0.0000023 *Math.pow(SumThreeFemale,2)-0.0001392*bodyCalcForm.Age.value
-  }
-  form.PercentFat.value = (4.95/form.Density.value-4.5)*100
-  form.FatWeight.value = form.Weight.value*form.PercentFat.value/100
-  form.LeanWeight.value = form.Weight.value-form.FatWeight.value
-    if (S == "Male") {
-       form.PopulationAverage.value =
-  13.815+0.13*form.Age.value
-  }
-    if (S == "Female") {
-       form.PopulationAverage.value =
-  21.55+0.1*form.Age.value
-  }
-    if (S == "Male") {
-       StandDev ="6"
-  }
-    if (S == "Female" && form.PercentFat.value<=form.PopulationAverage.value) {
-       StandDev ="8"
-  }
-    if (S == "Female" && form.PercentFat.value>form.PopulationAverage.value) {
-       StandDev ="7"
-  }
-  Zscore = (form.PopulationAverage.value-form.PercentFat.value)/StandDev
-  PE= Math.exp(-1.8355027*(Math.abs(Zscore)-0.23073201))
-  PercRegress= -0.41682992*(PE-1)/(PE+1)+0.58953708
-    if (Zscore > 0) {
-       form.Score.value =
-       Math.round(PercRegress*100)
-  }
-    if (Zscore <= 0) {
-       form.Score.value =
-       Math.round((1-PercRegress)*100)
-  }
-    if (Zscore >= 1) {
-       form.Rating.value ="Excellent"
-  }
-    if (Zscore < 1 && Zscore >= 0.5) {
-       form.Rating.value ="Good"
-  }
-    if (Zscore < 0.5 && Zscore >= -0.5) {
-       form.Rating.value ="Average"
-  }
-    if (Zscore < -0.5 && Zscore >= -1) {
-       form.Rating.value ="Fair"
-  }
-    if (Zscore < -1) {
-       form.Rating.value ="Poor"
-  }
-
-};
 
 // client_Density
 // client_LeanWeight

@@ -44,53 +44,74 @@ pageOrder: 9
         <fieldset name="formmain">
           <legend>Main</legend>
 
+          <div class="control-group">
+            <label class="control-label" for="clientAge">Age</label>
+            <div class="controls">
+              <input type="text" ng-model="client.age" ng-placeholder="Age"name="clientAge" id="clientAge">
+            </div>
+          </div>
 
-          <label for="clientAge">Age</label>
-          <input type="text" ng-model="client.age" ng-placeholder="Age"name="clientAge" id="clientAge">
-
-          <label for="clientWeight">Weight</label>
-          <input type="text" ng-model="client.weight" ng-placeholder="Weight"name="clientWeight" id="clientWeight">
+          <div class="control-group">
+            <label class="control-label" for="clientWeight">Weight</label>
+            <div class="controls">
+              <input type="text" ng-model="client.weight" ng-placeholder="Weight"name="clientWeight" id="clientWeight">
+            </div>
+          </div>
 
         </fieldset>
 
         <fieldset name="measurements">
           <legend>Measurements</legend>
 
-          <div ng-hide="getClientGender() == 'male' && getSiteNumber() == 'threesite'">
-            <label for"clientTriceps">Triceps</label>
-            <input name="clientTriceps" id="clientTriceps" type="text" ng-model="client.triceps">
+
+          <div class="control-group" ng-hide="getClientGender() == 'male' && getSiteNumber() == 'threesite'">
+            <label class="control-label" for"clientTriceps">Triceps</label>
+            <div class="controls">
+              <input name="clientTriceps" id="clientTriceps" type="text" ng-model="client.triceps">
+            </div>
           </div>
 
-          <div ng-hide="getClientGender() == 'female' && getSiteNumber() == 'threesite'">
-            <label for"clientPectoral">Pectoral</label>
-            <input name="clientPectoral" id="clientPectoral" type="text" ng-model="client.pectoral">
+          <div class="control-group" ng-hide="getClientGender() == 'female' && getSiteNumber() == 'threesite'">
+            <label class="control-label" for"clientPectoral">Pectoral</label>
+            <div class="controls">
+              <input name="clientPectoral" id="clientPectoral" type="text" ng-model="client.pectoral">
+            </div>
           </div>
 
-          <div ng-hide="getSiteNumber() == 'threesite'">
-            <label for"clientMidaxilla">Midaxilla</label>
-            <input name="clientMidaxilla" id="clientMidaxilla" type="text" ng-model="client.midaxilla">
+          <div class="control-group" ng-hide="getSiteNumber() == 'threesite'">
+            <label class="control-label" for"clientMidaxilla">Midaxilla</label>
+            <div class="controls">
+              <input name="clientMidaxilla" id="clientMidaxilla" type="text" ng-model="client.midaxilla">
+            </div>
           </div>
 
-
-          <div ng-hide="getSiteNumber() == 'threesite'">
-            <label for"clientSubscapula">Subscapula</label>
-            <input name="clientSubscapula" id="clientSubscapula" type="text" ng-model="client.subscapula">
+          <div class="control-group" ng-hide="getSiteNumber() == 'threesite'">
+            <label class="control-label" for"clientSubscapula">Subscapula</label>
+            <div class="controls">
+              <input name="clientSubscapula" id="clientSubscapula" type="text" ng-model="client.subscapula">
+            </div>
           </div>
 
-
-          <div ng-hide="getClientGender() == 'female' && getSiteNumber() == 'threesite'">
-            <label for"clientAbdomen">Abdomen</label>
-            <input name="clientAbdomen" id="clientAbdomen" type="text" ng-model="client.abdomen">
+          <div class="control-group" ng-hide="getClientGender() == 'female' && getSiteNumber() == 'threesite'">
+            <label class="control-label" for"clientAbdomen">Abdomen</label>
+            <div class="controls">
+              <input name="clientAbdomen" id="clientAbdomen" type="text" ng-model="client.abdomen">
+            </div>
           </div>
 
-          <div ng-hide="getClientGender() == 'male' && getSiteNumber() == 'threesite'">
-            <label for"clientSuprailiac">Suprailiac</label>
-            <input name="clientSuprailiac" id="clientSuprailiac" type="text" ng-model="client.suprailiac">
+          <div class="control-group" ng-hide="getClientGender() == 'male' && getSiteNumber() == 'threesite'">
+            <label class="control-label" for"clientSuprailiac">Suprailiac</label>
+            <div class="controls">
+              <input name="clientSuprailiac" id="clientSuprailiac" type="text" ng-model="client.suprailiac">
+            </div>
           </div>
 
-
-          <label for"clientQuadriceps">Quadriceps</label>
-          <input name="clientQuadriceps" id="clientQuadriceps" type="text" ng-model="client.quadriceps">
+          <div class="control-group">
+            <label class="control-label" for"clientQuadriceps">Quadriceps</label>
+            <div class="controls">
+              <input name="clientQuadriceps" id="clientQuadriceps" type="text" ng-model="client.quadriceps">
+            </div>
+          </div>
 
         </fieldset>
 
@@ -99,52 +120,72 @@ pageOrder: 9
           <button ng-click="reset()" class="btn">Reset</button>
         </div>
 
-      </form>
-
 
 
     </div>
 
-    <div class="span4 well">
+    <div class="span4">
       <div id="clientResults">
-        <fieldset name="results">
+
           <legend>Results</legend>
 
-          <p>Age: {{client.age}}</p>
-          <p>Weight: {{client.weight}}</p>
+          <div class="control-group">
+            <div class="input-group span9">
+              <span class="input-group-addon">Density: </span>
+              <input type="text" value="{{ client_Density }}">
+            </div>
+          </div>
+          <br>
 
-          <p>Triceps: {{client.triceps*1}}</p>
-          <p>Pectoral: {{client.pectoral*1}}</p>
-          <p>Midaxilla: {{client.midaxilla*1}}</p>
-          <p>Subscapula: {{client.subscapula*1}}</p>
-          <p>Abdomen: {{client.abdomen*1}}</p>
-          <p>Suprailiac: {{client.suprailiac*1}}</p>
-          <p>Quadriceps: {{client.quadriceps*1}}</p>
+          <div class="control-group">
+            <div class="input-group span9">
+              <span class="input-group-addon">Lean&nbsp;Weight:</span>
+              <input type="text" value="{{ client_LeanWeight }}">
+            </div>
+          </div>
+          <br>
 
-          <hr>
-          <p>SumThreeMale: {{ client.pectoral*1 + client.abdomen*1 + client.quadriceps*1 }}</p>
-          <p>SumThreeFemale: {{ client.triceps*1 + client.suprailiac*1 + client.quadriceps*1 }}</p>
-          <p>SumSeven: {{ client.triceps*1 + client.pectoral*1 + client.midaxilla*1 + client.subscapula*1 + client.abdomen*1 + client.suprailiac*1 + client.quadriceps*1}}</p>
-          <hr>
+          <div class="control-group">
+            <div class="input-group span9">
+              <span class="input-group-addon">Fat&nbsp;Weight:</span>
+              <input type="text" value="{{ client_FatWeight }}">
+            </div>
+          </div>
+          <br>
 
-          <p>SumThreeMaleVar: {{ sumThreeMale }}</p>
-          <p>SumThreeFemaleVar: {{ sumThreeFemale }}</p>
-          <p>SumSevenVar: {{ sumSeven }}</p>
-          <hr>
+          <div class="input-group span9">
+            <span class="input-group-addon input-large"><strong>%&nbsp;Fat:</strong></span>
+            <strong><input type="text" class="input-large" value="{{ client_PercentFat }}"></strong>
+          </div>
+          <br>
+
+          <div class="control-group">
+            <div class="input-group span9">
+              <span class="input-group-addon">Population&nbsp;Average:</span>
+              <input type="text" value="{{ client_PopulationAverage }}">
+            </div>
+          </div>
+          <br>
+
+          <div class="control-group">
+            <div class="input-group span9">
+              <span class="input-group-addon">Score:</span>
+              <input type="text" value="{{ client_Score }}">
+            </div>
+          </div>
+          <br>
+
+          <div class="control-group">
+            <div class="input-group span9">
+              <span class="input-group-addon">Rating:</span>
+              <input type="text" value="{{ client_Rating }}">
+            </div>
+          </div>
 
 
-          <p>Density: {{ client_Density }}</p>
-          <p>Lean Weight: {{client_LeanWeight}}</p>
-          <p>Fat Weight: {{ client_FatWeight }}</p>
-          <p>% Fat: {{ client_PercentFat }}</p>
-          <p>Population Average: {{ client_PopulationAverage }}</p>
-          <p>Score: {{ client_Score }}</p>
-          <p>Rating: {{ client_Rating }}</p>
-
-
-        </fieldset>
       </div>
 
+      </form>
 
     </div>
 
@@ -158,10 +199,11 @@ pageOrder: 9
 
 <hr>
 
+  <!-- debug section -->
   <div class="row">
-    <div class="">
+    <div class="span6">
 
-
+      <p class="lead">General</p>
 
       <pre>sitenumber: {{sitenumber | json}}</pre>
       <pre>clientgender: {{clientgender | json}}</pre>
@@ -171,6 +213,41 @@ pageOrder: 9
       <pre>clientresults = {{clientresults | json}}</pre>
       <pre>form = {{bodyCalcForm | json}}</pre>
     </div>
+
+    <div class="span6">
+
+      <p class="lead">Specific Values</p>
+
+      <pre style="line-height: 14px !important;">
+        Age: {{client.age}}<br>
+        Weight: {{client.weight}}<br>
+        Triceps: {{client.triceps*1}}<br>
+        Pectoral: {{client.pectoral*1}}<br>
+        Midaxilla: {{client.midaxilla*1}}<br>
+        Subscapula: {{client.subscapula*1}}<br>
+        Abdomen: {{client.abdomen*1}}<br>
+        Suprailiac: {{client.suprailiac*1}}<br>
+        Quadriceps: {{client.quadriceps*1}}
+      </pre>
+
+      <hr>
+      <pre>
+        SumThreeMale: {{ client.pectoral*1 + client.abdomen*1 + client.quadriceps*1 }}<br>
+        SumThreeFemale: {{ client.triceps*1 + client.suprailiac*1 + client.quadriceps*1 }}<br>
+        SumSeven: {{ client.triceps*1 + client.pectoral*1 + client.midaxilla*1 + client.subscapula*1 + client.abdomen*1 + client.suprailiac*1 + client.quadriceps*1}}
+      </pre>
+      <hr>
+
+      <pre>
+        SumThreeMaleVar: {{ sumThreeMale }}<br>
+        SumThreeFemaleVar: {{ sumThreeFemale }}<br>
+        SumSevenVar: {{ sumSeven }}
+      </pre>
+
+
+    </div>
+
+
   </div>
 
 </div>
