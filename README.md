@@ -1,7 +1,9 @@
+jas-esfitness
+==============
 
+Testground for the ES Fitness Application
 
-## Based on [Twitter Bootstrap](http://twitter.github.com/bootstrap/) skeleton for [DocPad](https://github.com/bevry/docpad)
-Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions.
+### Built with and powered by [Nodejs](http://nodejs.org/) and [DocPad](https://github.com/bevry/docpad). Styled with [Twitter Bootstrap](http://twitter.github.com/bootstrap/) and strengthened by [AngularJS](http://angularjs.org/).
 
 
 ## Getting Started
@@ -10,13 +12,12 @@ Simple and flexible HTML, CSS, and Javascript for popular user interface compone
 
 1. Clone the project and run the server
 
-  ``` bash
-  git clone https://github.com/jhuntdog/jas-esfitness.git
-  cd jas-esfitness
-  git submodule update --init --recursive
-  npm install
-  docpad run
-  ```
+        git clone https://github.com/jhuntdog/jas-esfitness.git
+        cd jas-esfitness
+        git submodule --init --recursive
+        git submodule update --recursive
+        npm install
+        docpad run
 
 1. [Open http://localhost:9778/](http://localhost:9778/)
 
