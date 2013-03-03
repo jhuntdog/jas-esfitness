@@ -6,41 +6,250 @@ tags: ['navpage','page']
 pageOrder: 9
 ---
 
-<div class="container" ng-controller="StrapCtrl">
+<div class="container" ng-controller="BodyCalcFormController">
   <div class="row">
 
-    <div class="span12">
-      <ul class="nav">
-        <li><a href="#/view1">View1</a></li>
-        <li><a href="#/view2">View2</a></li>
-      </ul>
+    <div class="span4 well">
+
+        <fieldset>
+          <legend>Config</legend>
+          <div class="row sitenumber-buttons" ng-model="sitenumber" bs-buttons-radio>
+            <div class="span6" >
+              <button type="button" class="btn btn-large btn-block" value="threesite">3 Site</button>
+            </div>
+            <div class="span6">
+              <button type="button" class="btn btn-large btn-block" value="sevensite">7 Site</button>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="row" ng-model="clientgender" bs-buttons-radio>
+            <div class="span6" >
+              <button type="button" class="btn btn-large btn-block btn-male" value="male">Male</button>
+            </div>
+            <div class="span6">
+              <button type="button" class="btn btn-large btn-block btn-female" value="female">Female</button>
+            </div>
+          </div>
+        </fieldset>
+
+          <br>
+
     </div>
 
+    <div class="span4">
 
+      <form name="bodyCalcForm" id="bodyCalcForm" novalidate class="form-horizontal">
+        <fieldset name="formmain">
+          <legend>Main</legend>
 
-    <div ng-view></div>
-
-    <div>Angular seed app: v<span app-version></span></div>
-
-    <hr>
-
-    <div class="btn-toolbar well">
-    <div class="btn-group" ng-model="radioValue" bs-buttons-radio>
-            <button type="button" class="btn" value="tressite">3 Site</button>
-            <button type="button" class="btn" value="sietesite">7 Site</button>
+          <div class="control-group">
+            <label class="control-label" for="clientAge">Age</label>
+            <div class="controls">
+              <input type="text" ng-model="client.age" ng-placeholder="Age"name="clientAge" id="clientAge">
+            </div>
           </div>
+
+          <div class="control-group">
+            <label class="control-label" for="clientWeight">Weight</label>
+            <div class="controls">
+              <input type="text" ng-model="client.weight" ng-placeholder="Weight"name="clientWeight" id="clientWeight">
+            </div>
+          </div>
+
+        </fieldset>
+
+        <fieldset name="measurements">
+          <legend>Measurements</legend>
+
+
+          <div class="control-group" ng-hide="getClientGender() == 'male' && getSiteNumber() == 'threesite'">
+            <label class="control-label" for"clientTriceps">Triceps</label>
+            <div class="controls">
+              <input name="clientTriceps" id="clientTriceps" type="text" ng-model="client.triceps">
+            </div>
+          </div>
+
+          <div class="control-group" ng-hide="getClientGender() == 'female' && getSiteNumber() == 'threesite'">
+            <label class="control-label" for"clientPectoral">Pectoral</label>
+            <div class="controls">
+              <input name="clientPectoral" id="clientPectoral" type="text" ng-model="client.pectoral">
+            </div>
+          </div>
+
+          <div class="control-group" ng-hide="getSiteNumber() == 'threesite'">
+            <label class="control-label" for"clientMidaxilla">Midaxilla</label>
+            <div class="controls">
+              <input name="clientMidaxilla" id="clientMidaxilla" type="text" ng-model="client.midaxilla">
+            </div>
+          </div>
+
+          <div class="control-group" ng-hide="getSiteNumber() == 'threesite'">
+            <label class="control-label" for"clientSubscapula">Subscapula</label>
+            <div class="controls">
+              <input name="clientSubscapula" id="clientSubscapula" type="text" ng-model="client.subscapula">
+            </div>
+          </div>
+
+          <div class="control-group" ng-hide="getClientGender() == 'female' && getSiteNumber() == 'threesite'">
+            <label class="control-label" for"clientAbdomen">Abdomen</label>
+            <div class="controls">
+              <input name="clientAbdomen" id="clientAbdomen" type="text" ng-model="client.abdomen">
+            </div>
+          </div>
+
+          <div class="control-group" ng-hide="getClientGender() == 'male' && getSiteNumber() == 'threesite'">
+            <label class="control-label" for"clientSuprailiac">Suprailiac</label>
+            <div class="controls">
+              <input name="clientSuprailiac" id="clientSuprailiac" type="text" ng-model="client.suprailiac">
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for"clientQuadriceps">Quadriceps</label>
+            <div class="controls">
+              <input name="clientQuadriceps" id="clientQuadriceps" type="text" ng-model="client.quadriceps">
+            </div>
+          </div>
+
+        </fieldset>
+
+        <div class="form-actions">
+          <button ng-click="calculate(client)" class="btn btn-success btn-large">Calc</button>
+          <button ng-click="reset()" class="btn">Reset</button>
         </div>
 
-    <hr>
-    <div>
-      <div class="btn-group" data-toggle="buttons-radio">
-        <button type="button" class="btn btn-primary">Left</button>
-        <button type="button" class="btn btn-primary">Middle</button>
-        <button type="button" class="btn btn-primary">Right</button>
-      </div>
+
+
     </div>
 
+    <div class="span4">
+      <div id="clientResults">
+
+          <legend>Results</legend>
+
+          <div class="control-group">
+            <div class="input-group span9">
+              <span class="input-group-addon">Density: </span>
+              <input type="text" value="{{ client_Density }}">
+            </div>
+          </div>
+          <br>
+
+          <div class="control-group">
+            <div class="input-group span9">
+              <span class="input-group-addon">Lean&nbsp;Weight:</span>
+              <input type="text" value="{{ client_LeanWeight }}">
+            </div>
+          </div>
+          <br>
+
+          <div class="control-group">
+            <div class="input-group span9">
+              <span class="input-group-addon">Fat&nbsp;Weight:</span>
+              <input type="text" value="{{ client_FatWeight }}">
+            </div>
+          </div>
+          <br>
+
+          <div class="input-group span9">
+            <span class="input-group-addon input-large"><strong>%&nbsp;Fat:</strong></span>
+            <strong><input type="text" class="input-large" value="{{ client_PercentFat }}"></strong>
+          </div>
+          <br>
+
+          <div class="control-group">
+            <div class="input-group span9">
+              <span class="input-group-addon">Population&nbsp;Average:</span>
+              <input type="text" value="{{ client_PopulationAverage }}">
+            </div>
+          </div>
+          <br>
+
+          <div class="control-group">
+            <div class="input-group span9">
+              <span class="input-group-addon">Score:</span>
+              <input type="text" value="{{ client_Score }}">
+            </div>
+          </div>
+          <br>
+
+          <div class="control-group">
+            <div class="input-group span9">
+              <span class="input-group-addon">Rating:</span>
+              <input type="text" value="{{ client_Rating }}">
+            </div>
+          </div>
+
+
+      </div>
+
+      </form>
+
+    </div>
+
+  </div> <!-- /row -->
+
+  <div class="row">
+
+
+
   </div>
+
+<hr>
+
+  <!-- debug section -->
+  <div class="row">
+    <div class="span6">
+
+      <p class="lead">General</p>
+
+      <pre>sitenumber: {{sitenumber | json}}</pre>
+      <pre>clientgender: {{clientgender | json}}</pre>
+      <pre>client = {{client | json}}</pre>
+      <pre>master = {{master | json}}</pre>
+      <pre>clientstats = {{clientstats | json}}</pre>
+      <pre>clientresults = {{clientresults | json}}</pre>
+      <pre>form = {{bodyCalcForm | json}}</pre>
+    </div>
+
+    <div class="span6">
+
+      <p class="lead">Specific Values</p>
+
+      <pre style="line-height: 14px !important;">
+        Age: {{client.age}}<br>
+        Weight: {{client.weight}}<br>
+        Triceps: {{client.triceps*1}}<br>
+        Pectoral: {{client.pectoral*1}}<br>
+        Midaxilla: {{client.midaxilla*1}}<br>
+        Subscapula: {{client.subscapula*1}}<br>
+        Abdomen: {{client.abdomen*1}}<br>
+        Suprailiac: {{client.suprailiac*1}}<br>
+        Quadriceps: {{client.quadriceps*1}}
+      </pre>
+
+      <hr>
+      <pre>
+        SumThreeMale: {{ client.pectoral*1 + client.abdomen*1 + client.quadriceps*1 }}<br>
+        SumThreeFemale: {{ client.triceps*1 + client.suprailiac*1 + client.quadriceps*1 }}<br>
+        SumSeven: {{ client.triceps*1 + client.pectoral*1 + client.midaxilla*1 + client.subscapula*1 + client.abdomen*1 + client.suprailiac*1 + client.quadriceps*1}}
+      </pre>
+      <hr>
+
+      <pre>
+        SumThreeMaleVar: {{ sumThreeMale }}<br>
+        SumThreeFemaleVar: {{ sumThreeFemale }}<br>
+        SumSevenVar: {{ sumSeven }}
+      </pre>
+
+
+    </div>
+
+
+  </div>
+
 </div>
 
 

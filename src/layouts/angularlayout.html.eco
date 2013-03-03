@@ -112,11 +112,7 @@
 
 
     <!-- angular scripts -->
-    <script src="assets/scripts/app/application.js"></script>
-    <script src="assets/scripts/app/services.js"></script>
-    <script src="assets/scripts/app/controllers.js"></script>
-    <script src="assets/scripts/app/filters.js"></script>
-    <script src="assets/scripts/app/directives.js"></script>
+
 
     <%- @getBlock('scripts').add(["/assets/scripts/plugins.js","/assets/scripts/main.js"]).toHTML() %>
 

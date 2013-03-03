@@ -19,7 +19,7 @@ textarea {
 }
 
 body {
-    font-size: 1em;
+    font-size: 1.5em;
     line-height: 1.4;
 }
 
@@ -78,9 +78,9 @@ textarea {
     resize: vertical;
 }
 
-select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+/*select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
   margin-bottom: 8px;
-}
+}*/
 
 /* ==========================================================================
    Chrome Frame prompt
@@ -98,6 +98,7 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
    ========================================================================== */
 
 body {
+  padding-top: 54px;
   position: relative; /* For scrollyspy */
   /* We add the padding to the body for >768px only */
 }
@@ -362,7 +363,25 @@ input[disabled] + label.btn {
     opacity: 0.65;
 }
 
+.sitenumber-buttons .btn.active {
+  background-color: #46b8da;
+  border-color: #31b0d5;
+}
 
+.btn.btn-male.active {
+  background-color: #357ebd;
+  border-color: #3071a9;
+}
+
+.btn.btn-female.active {
+  background-color: #E873B3;
+  border-color: #bd195b;
+}
+
+/*.btn.active {
+  background-color: #357ebd;
+  border-color: #3071a9;
+}*/
 
 
 /* ==========================================================================

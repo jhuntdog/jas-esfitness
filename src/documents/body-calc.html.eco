@@ -6,123 +6,203 @@ tags: ['navpage','page']
 pageOrder: 3
 ---
 
-<div class="container" ng-controller="BodyCalcCtrl">
+<div class="container" ng-controller="BodyCalcFormController">
   <div class="row">
-    <form name="bodyCalcForm" action="">
 
-      <div class="span4 well">
+    <div class="span4 well">
+
         <fieldset>
+          <legend>Config</legend>
+          <div class="row sitenumber-buttons" ng-model="sitenumber" bs-buttons-radio>
+            <div class="span6" >
+              <button type="button" class="btn btn-large btn-block" value="threesite">3 Site</button>
+            </div>
+            <div class="span6">
+              <button type="button" class="btn btn-large btn-block" value="sevensite">7 Site</button>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="row" ng-model="clientgender" bs-buttons-radio>
+            <div class="span6" >
+              <button type="button" class="btn btn-large btn-block btn-male" value="male">Male</button>
+            </div>
+            <div class="span6">
+              <button type="button" class="btn btn-large btn-block btn-female" value="female">Female</button>
+            </div>
+          </div>
+        </fieldset>
+
+          <br>
+
+    </div>
+
+    <div class="span4">
+
+      <form name="bodyCalcForm" id="bodyCalcForm" novalidate class="form-horizontal">
+        <fieldset name="formmain">
           <legend>Main</legend>
 
-          <div class="btn-group" ng-model="radioValue" bs-buttons-radio>
-            <button type="button" class="btn" value="tressite">3 Site</button>
-            <button type="button" class="btn" value="sietesite">7 Site</button>
+          <div class="control-group">
+            <label class="control-label" for="clientAge">Age</label>
+            <div class="controls">
+              <input type="text" ng-model="client.age" ng-placeholder="Age"name="clientAge" id="clientAge">
+            </div>
           </div>
 
-          <div class="btn-group btn-group-justified">
-            <input type="radio" ng-model="client.sitenumber" value="threesite" name="clientSiteNumber" id="clientSiteThree"/>
-            <label class="btn btn-large btn-site-active" for="clientSiteThree">3 Site</label>
-
-            <input type="radio" ng-model="client.sitenumber" value="sevensite" name="clientSiteNumber" id="clientSiteSeven" />
-            <label class="btn btn-large btn-site-active" for="clientSiteSeven">7 Site</label>
+          <div class="control-group">
+            <label class="control-label" for="clientWeight">Weight</label>
+            <div class="controls">
+              <input type="text" ng-model="client.weight" ng-placeholder="Weight"name="clientWeight" id="clientWeight">
+            </div>
           </div>
-
-          <div><br></div>
-
-          <div class="btn-group btn-group-justified">
-            <input type="radio" ng-model="client.gender" value="male" name="clientGender" id="clientGenderMale" checked/>
-            <label class="btn btn-large btn-male" for="clientGenderMale">Male</label>
-            <input type="radio" ng-model="client.gender" value="female" name="clientGender" id="clientGenderFemale" />
-            <label class="btn btn-large btn-female" for="clientGenderFemale">Female</label>
-          </div>
-
-          <div><br></div>
-
-
-
-
-
-
-          <label for="">Age</label>
-          <input type="text" ng-model="client.age" name="clientAge">
-
-          <label for="">Weight</label>
-          <input type="text" ng-model="client.weight" name="clientWeight">
-
 
         </fieldset>
-      </div>
 
-      <div class="span4">
         <fieldset name="measurements">
           <legend>Measurements</legend>
 
-          <label for"">Triceps</label>
-          <input name="triceps" type="text" ng-model="client.triceps">
 
-          <label for"">Pectoral</label>
-          <input name="pectoral" type="text" ng-model="client.pectoral">
+          <div class="control-group" ng-hide="getClientGender() == 'male' && getSiteNumber() == 'threesite'">
+            <label class="control-label" for"clientTriceps">Triceps</label>
+            <div class="controls">
+              <input name="clientTriceps" id="clientTriceps" type="text" ng-model="client.triceps">
+            </div>
+          </div>
 
-          <label for"">Midaxilla</label>
-          <input name="midaxilla" type="text" ng-model="client.midaxilla">
+          <div class="control-group" ng-hide="getClientGender() == 'female' && getSiteNumber() == 'threesite'">
+            <label class="control-label" for"clientPectoral">Pectoral</label>
+            <div class="controls">
+              <input name="clientPectoral" id="clientPectoral" type="text" ng-model="client.pectoral">
+            </div>
+          </div>
 
-          <label for"">Subscapula</label>
-          <input name="subscapula" type="text" ng-model="client.subscapula">
+          <div class="control-group" ng-hide="getSiteNumber() == 'threesite'">
+            <label class="control-label" for"clientMidaxilla">Midaxilla</label>
+            <div class="controls">
+              <input name="clientMidaxilla" id="clientMidaxilla" type="text" ng-model="client.midaxilla">
+            </div>
+          </div>
 
-          <label for"">Abdomen</label>
-          <input name="abdomen" type="text" ng-model="client.abdomen">
+          <div class="control-group" ng-hide="getSiteNumber() == 'threesite'">
+            <label class="control-label" for"clientSubscapula">Subscapula</label>
+            <div class="controls">
+              <input name="clientSubscapula" id="clientSubscapula" type="text" ng-model="client.subscapula">
+            </div>
+          </div>
 
-          <label for"">Suprailiac</label>
-          <input name="suprailiac" type="text" ng-model="client.suprailiac">
+          <div class="control-group" ng-hide="getClientGender() == 'female' && getSiteNumber() == 'threesite'">
+            <label class="control-label" for"clientAbdomen">Abdomen</label>
+            <div class="controls">
+              <input name="clientAbdomen" id="clientAbdomen" type="text" ng-model="client.abdomen">
+            </div>
+          </div>
 
-          <label for"">Quadriceps</label>
-          <input name="quadriceps" type="text" ng-model="client.quadriceps">
+          <div class="control-group" ng-hide="getClientGender() == 'male' && getSiteNumber() == 'threesite'">
+            <label class="control-label" for"clientSuprailiac">Suprailiac</label>
+            <div class="controls">
+              <input name="clientSuprailiac" id="clientSuprailiac" type="text" ng-model="client.suprailiac">
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for"clientQuadriceps">Quadriceps</label>
+            <div class="controls">
+              <input name="clientQuadriceps" id="clientQuadriceps" type="text" ng-model="client.quadriceps">
+            </div>
+          </div>
 
         </fieldset>
-      </div>
 
-      <div class="sapn4">
-        <fieldset name="results">
+        <div class="form-actions">
+          <button ng-click="calculate(client)" class="btn btn-success btn-large">Calc</button>
+          <button ng-click="reset()" class="btn">Reset</button>
+        </div>
+
+
+
+    </div>
+
+    <div class="span4">
+      <div id="clientResults">
+
           <legend>Results</legend>
 
-          <label for"">Density</label>
-          <input name="Density" type="text">
-          <label for"">Lean Weight</label>
-          <input name="LeanWeight" type="text">
-          <label for"">Fat Weight</label>
-          <input name="FatWeight" type="text">
-          <label for"">% Fat</label>
-          <input name="PercentFat" type="text">
-          <label for"">Population Average</label>
-          <input name="PopulationAverage" type="text">
-          <label for"">Score</label>
-          <input name="Score" type="text">
-          <label for"">Rating</label>
-          <input name="Rating" type="text">
+          <div class="input-group span9">
+            <span class="input-group-addon input-large"><strong>%&nbsp;Fat:</strong></span>
+            <strong><input type="text" class="input-large" value="{{ client_PercentFat }}"></strong>
+          </div>
+          <br>
 
-        </fieldset>
+          <div class="control-group">
+            <div class="input-group span9">
+              <span class="input-group-addon">Density: </span>
+              <input type="text" value="{{ client_Density }}">
+            </div>
+          </div>
+          <br>
+
+          <div class="control-group">
+            <div class="input-group span9">
+              <span class="input-group-addon">Lean&nbsp;Weight:</span>
+              <input type="text" value="{{ client_LeanWeight }}">
+            </div>
+          </div>
+          <br>
+
+          <div class="control-group">
+            <div class="input-group span9">
+              <span class="input-group-addon">Fat&nbsp;Weight:</span>
+              <input type="text" value="{{ client_FatWeight }}">
+            </div>
+          </div>
+          <br>
+
+
+
+          <div class="control-group">
+            <div class="input-group span9">
+              <span class="input-group-addon">Population&nbsp;Average:</span>
+              <input type="text" value="{{ client_PopulationAverage }}">
+            </div>
+          </div>
+          <br>
+
+          <div class="control-group">
+            <div class="input-group span9">
+              <span class="input-group-addon">Score:</span>
+              <input type="text" value="{{ client_Score }}">
+            </div>
+          </div>
+          <br>
+
+          <div class="control-group">
+            <div class="input-group span9">
+              <span class="input-group-addon">Rating:</span>
+              <input type="text" value="{{ client_Rating }}">
+            </div>
+          </div>
+
+
       </div>
 
-      <div class="form-actions">
-        <button ng-click="calculate(client)" type="submit" class="btn btn-primary">Calc</button>
-        <button ng-click="reset()" type="button" class="btn">Reset</button>
-      </div>
+      </form>
 
-      <div class="demo">
-        <p class="lead">Debug Stuff</p>
+    </div>
 
-        <pre>client = {{client | json}}</pre>
-        <pre>master = {{master | json}}</pre>
-        <pre>form = {{bodyCalcForm | json}}</pre>
+  </div> <!-- /row -->
 
-        <h2>Experiment</h2>
-        <p>1 + 2 = {{ 1 + 2 }}</p>
-      </div>
 
-    </form>
-  </div>
   <div class="row">
 
+    <br>
+
   </div>
-</div> <!-- end BodyCalcCtrl and container -->
+
+
+
+</div>
+
+
 
