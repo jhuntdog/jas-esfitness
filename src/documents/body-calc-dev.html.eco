@@ -1,17 +1,12 @@
 ---
-title: 'AppDemo'
-layout: 'devlayout'
+title: 'BodyCalcDev'
+layout: 'angularlayout'
 subtitle: 'Crunch those numbers!'
 tags: ['navpage','page']
-pageOrder: 9
+pageOrder: 3
 ---
 
-<div class="container" ng-controller="BodyCalcAppController">
-
-  <div class="row">
-    sitenumber = {{sitenumber}}
-  </div>
-
+<div class="container" ng-controller="BodyCalcFormController">
   <div class="row">
 
     <div class="span4 well">
@@ -20,10 +15,10 @@ pageOrder: 9
           <legend>Config</legend>
           <div class="row sitenumber-buttons" ng-model="sitenumber" bs-buttons-radio>
             <div class="span6" >
-                <button type="button" class="btn btn-large btn-block" value="threesite" on-click"location.href='#/threesite/{{clientgender}}'">3 Site</button>
+              <button type="button" class="btn btn-large btn-block" value="threesite">3 Site</button>
             </div>
             <div class="span6">
-              <button type="button" class="btn btn-large btn-block" value="sevensite" on-click"location.href='#/sevensite/{{clientgender}}'">7 Site</button>
+              <button type="button" class="btn btn-large btn-block" value="sevensite">7 Site</button>
             </div>
           </div>
 
@@ -31,10 +26,10 @@ pageOrder: 9
 
           <div class="row" ng-model="clientgender" bs-buttons-radio>
             <div class="span6" >
-              <button href="#/{{sitenumber}}/male" type="button" class="btn btn-large btn-block btn-male" value="male">Male</button>
+              <button type="button" class="btn btn-large btn-block btn-male" value="male">Male</button>
             </div>
             <div class="span6">
-              <button href="#/{{sitenumber}}/female" type="button" class="btn btn-large btn-block btn-female" value="female">Female</button>
+              <button type="button" class="btn btn-large btn-block btn-female" value="female">Female</button>
             </div>
           </div>
         </fieldset>
@@ -134,6 +129,12 @@ pageOrder: 9
 
           <legend>Results</legend>
 
+          <div class="input-group span9">
+            <span class="input-group-addon input-large"><strong>%&nbsp;Fat:</strong></span>
+            <strong><input type="text" class="input-large" value="{{ client_PercentFat }}"></strong>
+          </div>
+          <br>
+
           <div class="control-group">
             <div class="input-group span9">
               <span class="input-group-addon">Density: </span>
@@ -158,11 +159,7 @@ pageOrder: 9
           </div>
           <br>
 
-          <div class="input-group span9">
-            <span class="input-group-addon input-large"><strong>%&nbsp;Fat:</strong></span>
-            <strong><input type="text" class="input-large" value="{{ client_PercentFat }}"></strong>
-          </div>
-          <br>
+
 
           <div class="control-group">
             <div class="input-group span9">
@@ -196,15 +193,14 @@ pageOrder: 9
 
   </div> <!-- /row -->
 
+
   <div class="row">
 
-
+    <br>
 
   </div>
 
-<hr>
-
-  <!-- debug section -->
+   <!-- debug section -->
   <div class="row">
     <div class="span6">
 
@@ -255,6 +251,9 @@ pageOrder: 9
 
   </div>
 
+
+
 </div>
+
 
 

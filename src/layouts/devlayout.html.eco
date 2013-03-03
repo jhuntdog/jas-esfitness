@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" ng-app="esFitApp"> <!--<![endif]-->
+<head>
+
+  <!-- Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <!-- Our site title and description -->
+  <title><%= @getPreparedTitle() %></title>
+  <meta name="description" content="<%= @getPreparedDescription() %>" />
+  <meta name="keywords" content="<%= @getPreparedKeywords() %>" />
+  <meta name="author" content="<%= @site.author or '' %>" />
+
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Styles -->
+
+  <%- @getBlock('styles').add(["/assets/styles/twbp-styles.css","/assets/styles/base.css"]).toHTML() %>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="assets/scripts/vendor/html5shiv.js"></script>
+    <script src="assets/scripts/vendor/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+                  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+                                 <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+</head>
+
+  <body class="home">
+
+    <!-- Navbar
+    ================================================== -->
+    <nav class="mainnav">
+      <div class="navbar navbar-fixed-top">
+        <div class="container">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">ES Fitness</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <% for document in @getCollection('navpages').toJSON(): %>
+                <li typeof="sioc:Page" about="<%= document.url %>" class="<%= 'active'  if @document.url is document.url %>">
+                  <a href="<%= document.url %>" property="dc:title"><%= document.title %></a>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Subhead
+    ================================================== -->
+    <header class="es-fit-jumbotron subhead" id="overview">
+      <div class="container">
+        <h1><%= @getDocumentTitle() %></h1>
+        <p class="lead"><%= @getDocumentSubtitle() %></p>
+      </div>
+    </header>
+
+    <div role="main">
+      <%- @content %>
+    </div>
+
+
+
+    <hr>
+
+    <!-- colophon - main page footer (social buttons, copyright, etc) -->
+    <%-@partial('colophon.html.eco')%>
+
+
+    <!-- Core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/scripts/vendor/jquery.min.js"><\/script>')</script>
+
+
+
+    <!-- ANGULAR
+    ================================================== -->
+    <!-- In production use:
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+    -->
+
+    <!-- angular lib -->
+    <script src="assets/lib/angular/angular.js"></script>
+
+    <!-- bootstrap scripts -->
+    <script src="assets/scripts/vendor/bootstrap.min.js"></script>
+
+    <!-- angular-strap scripts -->
+    <script src="assets/lib/angular-strap/angular-strap.js"></script>
+
+    <!-- angular script injection -->
+    <!-- <script src="assets/scripts/app.js"></script> -->
+    <script src="assets/scripts/appdev.js"></script>
+
+      <!-- angular scripts -->
+    <!-- <script src="/assets/scripts/app/application.js"></script>
+    <script src="/assets/scripts/app/services.js"></script>
+    <script src="/assets/scripts/app/controllers.js"></script>
+    <script src="/assets/scripts/app/filters.js"></script>
+    <script src="/assets/scripts/app/directives.js"></script> -->
+
+
+    <!-- angular scripts -->
+
+
+    <%- @getBlock('scripts').add(["/assets/scripts/plugins.js","/assets/scripts/main.js"]).toHTML() %>
+
+  </body>
+</html>

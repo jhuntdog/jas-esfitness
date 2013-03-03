@@ -1,0 +1,36 @@
+[
+    {
+        "age": 0,
+        "id": "male-three-site",
+        "name": "Male Three Site",
+        "calcfields": {
+            "Pectoral": 0,
+            "Abdomen": 0,
+            "Quadriceps": 0
+        }
+    },
+    {
+        "age": 1,
+        "id": "female-three-site",
+        "name": "Female Three Site",
+        "calcfields": {
+            "Triceps": 0,
+            "Suprailiac": 0,
+            "Quadriceps": 0
+        }
+    },
+    {
+        "age": 2,
+        "id": "seven-site",
+        "name": "Seven Site",
+        "calcfields": {
+            "Triceps": 0,
+            "Pectoral": 0,
+            "Midaxilla": 0,
+            "Subscapula": 0,
+            "Abdomen": 0,
+            "Suprailiac": 0,
+            "Quadriceps": 0
+        }
+    }
+]
