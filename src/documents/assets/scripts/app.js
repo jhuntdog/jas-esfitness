@@ -13,7 +13,11 @@
 
 var app = angular.module('esFitApp', ['$strap.directives']);
 
-app.controller('BodyCalcFormController', function($scope, $window) {
+app.controller('BodyCalcFormController', function($scope, $http) {
+
+  $http.get('data/calcs.json').success(function(data) {
+    $scope.client = data;
+  });
 
   $scope.button = {active: true};
   //$scope.buttonSelect = {price: '89,99', currency: '€'};
@@ -40,24 +44,24 @@ app.controller('BodyCalcFormController', function($scope, $window) {
   //   "quadriceps": "0"
   // }];
 
-  $scope.client = {};
-  $scope.client.age = 30;
-  $scope.client.weight = 160;
-  $scope.client.triceps = 0;
-  $scope.client.pectoral = 0;
-  $scope.client.midaxilla = 0;
-  $scope.client.subscapula = 0;
-  $scope.client.abdomen = 0;
-  $scope.client.suprailiac = 0;
-  $scope.client.quadriceps = 0;
+  // $scope.client = {};
+  // $scope.client.age = 30;
+  // $scope.client.weight = 160;
+  // $scope.client.triceps = 0;
+  // $scope.client.pectoral = 0;
+  // $scope.client.midaxilla = 0;
+  // $scope.client.subscapula = 0;
+  // $scope.client.abdomen = 0;
+  // $scope.client.suprailiac = 0;
+  // $scope.client.quadriceps = 0;
 
-  $scope.client_Density = 0;
-  $scope.client_LeanWeight = 0;
-  $scope.client_FatWeight = 0;
-  $scope.client_PercentFat = 0;
-  $scope.client_PopulationAverage = 0;
-  $scope.client_Score = 0;
-  $scope.client_Rating = 0;
+  // $scope.client_Density = 0;
+  // $scope.client_LeanWeight = 0;
+  // $scope.client_FatWeight = 0;
+  // $scope.client_PercentFat = 0;
+  // $scope.client_PopulationAverage = 0;
+  // $scope.client_Score = 0;
+  // $scope.client_Rating = 0;
 
   $scope.sitenumber = 'threesite';
   $scope.clientgender = 'male';
@@ -165,20 +169,9 @@ app.controller('BodyCalcFormController', function($scope, $window) {
 
   $scope.sumThreeMale = 0;
 
-
+//BodyCalcFormController.$inject = ['$scope', '$http'];
 
 
 
 });
 
-
-
-
-
-// client_Density
-// client_LeanWeight
-// client_FatWeight
-// client_PercentFat
-// client_PopulationAverage
-// client_Score
-// client_Rating
